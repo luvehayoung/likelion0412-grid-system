@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*그리드 12칼럼으로 만들기*/
+		*{
+			box-sizing:border-box; /*width를 제어하기 편하게하기위해서*/
+			padding:0;
+			margin:0;
+		}
+		/*calc함수 -css3에서 제공 을 사용하면, 퍼센트와 픽셀, * / + - 계싼 등등 가능하다. rem, em등등도 사용가능*/
+		.col-1{
+			width:calc(100% / 12);
+		}
+		.col-2{
+			width:calc(100% / 12 * 2);
+		}
+		.col-3{
+			width:calc(100% / 12 * 3);
+		}
+		.col-4{
+			width:calc(100% / 12 * 4);
+		}
+		.col-5{
+			width:calc(100% / 12 * 5);
+		}
+		.col-6{
+			width:calc(100% / 12 * 6);
+		}
+		.col-7{
+			width:calc(100% / 12 * 7);
+		}
+		.col-8{
+			width:calc(100% / 12 * 8);
+		}
+		.col-9{
+			width:calc(100% / 12 * 9);
+		}
+		.col-10{
+			width:calc(100% / 12 * 10);
+		}
+		.col-11{
+			width:calc(100% / 12 * 11);
+		}
+		.col-12{
+			width:calc(100%);
+		}
+		/*그리드 칼럼 작성후 모든 칼럼에 대하여 양옆의 거터를 원하는 만큼 잡아준다.*/
+		[class*="col-"] {
+ 			float: left;
+    		padding: 15px; /*원하는 대로 조정 가능*/
+    	}
+
+		/*클리어 픽스처럼 플로트 속성을 클리어해줄 클래스, clearfix처럼 부모에다가 적용시켜줘야한다.*/
+		.row::after {
+ 			content: "";
+    		clear: both;
+    		display: block;
+		}
+
+
+		/*뷰포트http://nuli.navercorp.com/sharing/blog/post/1132729*/
+		/*미디어쿼리*/
+		.header{
+			margin-top:30px;
+			margin-left:calc(100%/12);
+			background-color:#175AB6;
+			height:70px;
+			border-radius:5px;
+			box-shadow:2px 2px 10px #cccccc;
+		}
+		
+		.nav{
+			margin-left:calc(100%/12);	
+			background-color:#B99CBD;
+			height:150px;
+			border-radius:5px;
+			box-shadow:2px 2px 10px #cccccc;
+			margin-top:20px;
+		}
+
+		.section{
+			background-color:#B2C2D4;
+			height:150px;
+			border-radius:5px;
+			box-shadow:2px 2px 10px #cccccc;
+			margin-left:calc(100%/12);
+			margin-top:20px;
+		}
+		.article{
+			margin-left:calc(100%/12);	
+			margin-top:20px;
+			background-color:#B2C2D4;
+			height:250px;
+			border-radius:5px;
+			box-shadow:2px 2px 10px #cccccc;
+		}
+
+
+		.footer{
+			margin-left:calc(100%/12);
+			background-color:#65649D;
+			height:70px;
+			border-radius:5px;
+			box-shadow:2px 2px 10px #cccccc;
+			margin-top:20px;
+		}
+		.working{
+			background-color:red;
+			box-shadow:2px 2px 10px #cccccc;
+		}
+
+	/*미디어 쿼리를 이용해서 모바일에서는 레이아웃 달라지게 하기*/
+	@media only screen and (max-width: 600px) { /*최대 넓이가 600일때 적용되는 css들*/
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+		/*nav이동이랑, 넓이 꽉차게*/
+		.nav{
+			display:none;
+		}
+		
+
+	
+	}
+
+	
+
+		
+	</style>
+</head>
+
+<body>
+	<div class="header col-10">HEADER</div>
+	
+	<div class="row">
+		<div class="nav col-3"></div>
+		<div class="section col-m-10 col-6"></div>
+			<!-- <div class="col-2 working"></div> -->
+		<div class="article col-10"></div>
+	</div>
+	
+	<div class="footer col-10">FOOTER</div>
+</body>
+
+
+
+</html>
+
